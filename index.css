@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* custom css for the bootstrap classes */
+.navbar-custom {
+  background-color: aquamarine;
+}
+
+/* This is for getting started */
+#get-started {
+  align-items: center;
+  width: 300px;
+  padding: 50px;
+  margin: 20px;
+}
+
+/* This is the quiz container */
+#quiz {
+  margin: auto;
+  width: 70%;
+  padding: 50px;
+  align-items: center;
+}
+
+/* This is the answer options */
+.answer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  align-items: center;
+  height: 50px;
+  width: 100px;
+}
+
+/* To hide the bullet points */
+li {
+  list-style: none;
+}
+
+#question {
+  align-items: center;
+}
+
+/* This is footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: aquamarine;
+  text-align: center;
+}

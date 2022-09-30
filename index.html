@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <title>Quiz</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="nav-container">
+      <nav class="navbar navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand text-center" href="">Navbar</a>
+        </div>
+      </nav>
+    </div>
+
+    <div id="get-started">
+      <h3>Lets See How well you know about Emblems</h3>
+      <marquee>
+        <img src="1.png" alt="1" />
+        <img src="2.png" alt="2" />
+        <img src="3.png" alt="3" />
+        <img src="4.png" alt="4" />
+      </marquee>
+      <button id="btn">Lets Start</button>
+    </div>
+
+    <!-- Quiz-block starts here -->
+    <div class="grid">
+      <div id="quiz">
+        <hr style="margin-bottom: 20px" />
+        <p id="question"></p>
+        <div class="buttons">
+          <button id="btn0"><span id="choice0"></span></button>
+          <button id="btn1"><span id="choice1"></span></button>
+          <button id="btn2"><span id="choice2"></span></button>
+          <button id="btn3"><span id="choice3"></span></button>
+        </div>
+        <hr style="margin-top: 50px" />
+        <footer>
+          <p id="progress">Question x of y</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Quiz-block ends here -->
+
+    <!-- This is footer -->
+    <footer class="footer p-4 text-muted">This is the footer</footer>
+
+    <!-- Script tag -->
+    <script src="index.js"></script>
+    <!-- <script src="script.js"></script> -->
+
+    <!-- srcipt tag for bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
