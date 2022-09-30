@@ -16,15 +16,6 @@
   </head>
 
   <body>
-    <!-- Navbar -->
-    <div class="nav-container">
-      <nav class="navbar navbar-custom">
-        <div class="container-fluid">
-          <a class="navbar-brand text-center" href="">Navbar</a>
-        </div>
-      </nav>
-    </div>
-
     <div id="get-started">
       <h3>Lets See How well you know about Emblems</h3>
       <marquee>
@@ -33,14 +24,14 @@
         <img src="3.png" alt="3" />
         <img src="4.png" alt="4" />
       </marquee>
-      <button id="btn">Lets Start</button>
+      <button id="btn" class="btn btn-lg">Lets Start</button>
     </div>
 
     <!-- Quiz-block starts here -->
-    <div class="grid">
+    <div id="quiz-container" class="hide">
       <div id="quiz">
         <hr style="margin-bottom: 20px" />
-        <p id="question"></p>
+        <p id="questions"></p>
         <div class="buttons">
           <button id="btn0"><span id="choice0"></span></button>
           <button id="btn1"><span id="choice1"></span></button>

@@ -61,13 +61,25 @@ let questions = [
   ),
 ];
 
+let startBtn = document.getElementById("get-started");
+let questionContainerBox = document.getElementById("questions");
+
+startBtn.addEventListener("click", startQuiz);
+function startQuiz() {
+  console.log("started");
+  startBtn.classList.add("hide");
+
+  let element = document.getElementById("quiz-container");
+  element.classList.remove("hide");
+}
+
 function displayQuiz() {
   if (quiz.isEnded()) {
     showScores();
   } else {
     // show question
-    let element = document.getElementById("question");
-    element.innerHTML = quiz.getQuestionIndex().text;
+    // let element = document.getElementById("question");
+    questionContainerBox.innerHTML = quiz.getQuestionIndex().text;
 
     // show options
     let choices = quiz.getQuestionIndex().choices;
@@ -76,7 +88,7 @@ function displayQuiz() {
       element.innerHTML = images[choices[i]]
         ? '<img src="' + images[choices[i]] + '"/>'
         : choices[i];
-      guess("btn" + i, choices[i]);
+      userAnswer("btn" + i, choices[i]);
     }
 
     showProgress();
@@ -92,10 +104,10 @@ function Quiz(questions) {
   this.questionIndex = 0;
 }
 
-function guess(id, guess) {
+function userAnswer(id, guess) {
   let button = document.getElementById(id);
   button.onclick = function () {
-    quiz.guess(guess);
+    quiz.userAnswer(guess);
     displayQuiz();
   };
 }
@@ -128,7 +140,7 @@ Quiz.prototype.getQuestionIndex = function () {
   return this.questions[this.questionIndex];
 };
 
-Quiz.prototype.guess = function (answer) {
+Quiz.prototype.userAnswer = function (answer) {
   if (this.getQuestionIndex().isCorrectAnswer(answer)) {
     this.score++;
   }
