@@ -8,7 +8,7 @@ let images = {
 };
 
 // create questions
-var questions = [
+let questions = [
   new Question(
     "<img src='1.png' alt='one'/>",
     [
@@ -66,13 +66,13 @@ function displayQuiz() {
     showScores();
   } else {
     // show question
-    var element = document.getElementById("question");
+    let element = document.getElementById("question");
     element.innerHTML = quiz.getQuestionIndex().text;
 
     // show options
-    var choices = quiz.getQuestionIndex().choices;
-    for (var i = 0; i < choices.length; i++) {
-      var element = document.getElementById("choice" + i);
+    let choices = quiz.getQuestionIndex().choices;
+    for (let i = 0; i < choices.length; i++) {
+      let element = document.getElementById("choice" + i);
       element.innerHTML = images[choices[i]]
         ? '<img src="' + images[choices[i]] + '"/>'
         : choices[i];
@@ -83,25 +83,34 @@ function displayQuiz() {
   }
 }
 
+// create quiz
+let quiz = new Quiz(questions);
+
+function Quiz(questions) {
+  this.score = 0;
+  this.questions = questions;
+  this.questionIndex = 0;
+}
+
 function guess(id, guess) {
-  var button = document.getElementById(id);
+  let button = document.getElementById(id);
   button.onclick = function () {
     quiz.guess(guess);
-    populate();
+    displayQuiz();
   };
 }
 
 function showProgress() {
-  var currentQuestionNumber = quiz.questionIndex + 1;
-  var element = document.getElementById("progress");
+  let currentQuestionNumber = quiz.questionIndex + 1;
+  let element = document.getElementById("progress");
   element.innerHTML =
     "Question " + currentQuestionNumber + " of " + quiz.questions.length;
 }
 
 function showScores() {
-  var gameOverHTML = "<h1>Result</h1>";
+  let gameOverHTML = "<h1>Result</h1>";
   gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
-  var element = document.getElementById("quiz");
+  let element = document.getElementById("quiz");
   element.innerHTML = gameOverHTML;
 }
 
@@ -114,12 +123,6 @@ function Question(text, choices, answer) {
 Question.prototype.isCorrectAnswer = function (choice) {
   return this.answer === choice;
 };
-
-function Quiz(questions) {
-  this.score = 0;
-  this.questions = questions;
-  this.questionIndex = 0;
-}
 
 Quiz.prototype.getQuestionIndex = function () {
   return this.questions[this.questionIndex];
@@ -136,9 +139,6 @@ Quiz.prototype.guess = function (answer) {
 Quiz.prototype.isEnded = function () {
   return this.questionIndex === this.questions.length;
 };
-
-// create quiz
-var quiz = new Quiz(questions);
 
 // display quiz
 displayQuiz();

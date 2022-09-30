@@ -10,10 +10,10 @@ body {
 
 /* This is for getting started */
 #get-started {
-  align-items: center;
   width: 300px;
   padding: 50px;
   margin: 20px;
+  align-items: center;
 }
 
 /* This is the quiz container */
